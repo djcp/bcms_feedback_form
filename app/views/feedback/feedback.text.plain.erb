@@ -1,0 +1,7 @@
+Feedback form submission:
+
+<% @fields.each do |field| -%>
+<%= field.titleize %> => <%= @cgi_params[:feedback_form][field] %>
+<% end -%>
+
+at: <%= Time.now.to_s %>

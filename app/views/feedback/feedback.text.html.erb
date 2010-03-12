@@ -1,0 +1,12 @@
+<h2>Feedback form submission</h2>
+
+<table border="0" cellpadding="3">
+<% @fields.each do |field| -%>
+  <tr>
+    <th><strong><%=h field.titleize %></strong></th>
+    <td><%=h @cgi_params[:feedback_form][field] %></td>
+  </tr>
+<% end -%>
+</table>
+
+<p>at: <%= Time.now.to_s %></p>

@@ -1,0 +1,18 @@
+<%= f.cms_text_field :name %>
+<%= f.cms_text_field :send_to, :instructions => 'A single email address or a comma-separated list of email addresses.' %>
+<%= f.cms_text_field :from, :instructions => 'A single email address that the form is sent "from". We\'ll try to parse the from out of the params if you don\'t specify it here - name the field "from".' %>
+
+<div class="fields checkbox_group">
+  <label>Use ReCaptcha</label>
+  <div class="checkboxes">
+    <div class="checkbox_fields">
+      <%= f.check_box :use_recaptcha %> <%= f.label :use_recaptcha, 'Use Recaptcha to protect this form from spammers. HIGHLY recommended.' %>
+    </div>
+  </div>
+  <br clear="all" />
+</div>
+
+<%= f.cms_text_field :subject, :instructions => 'The subject line of the outgoing email.' %>
+<%= f.cms_text_editor :description, :label => 'Description: The html / text that appears above the rendered form on the website.' %>
+<%= f.cms_text_editor :thank_you, :label => 'Thank you: The html / text that appears after a successful form submission' %>
+<%= f.cms_text_area :form, :label => 'Form: (OPTIONAL). You can define a form here manually and it will be wrapped in the correct form tag. All form elements you want sent through the mailer should live in the "feedback_form[]" parameter namespace, so they\'d have names like "feedback_form[message]"' %>

@@ -1,0 +1,24 @@
+<div class="feedback-form">
+  <%= @content_block.description %>
+  <div id="feedback-form-<%= @content_block.id %>">
+    <% form_remote_tag(:url => url_for(:controller => '/feedback_forms', :action => :submit, :id => @content_block.id), :update => "feedback-form-#{@content_block.id}" ) do -%>
+      <% unless @content_block.form.blank? %>
+        <%= @content_block.form %>
+      <% else %>
+        <p><strong>Name:</strong> <%= text_field_tag 'feedback_form[name]' %></p>
+        <p><strong>Email:</strong> <%= text_field_tag 'feedback_form[from]' %></p>
+        <p><strong>About:</strong> <%= text_field_tag 'feedback_form[about]' %></p>
+        <p>
+        <strong>Message:</strong><br/>
+        <%= text_area_tag 'feedback_form[message]', '', :size => '60x4' %>
+        </p>
+      <% end %>
+      <% if @content_block.use_recaptcha %>
+        <p><strong>Please enter the text below:</strong></p>
+        <%= recaptcha_tags %>
+      <% end %>
+      <%= hidden_field_tag '_redirect_to', url_for() %>
+      <%= submit_tag 'Submit form' %>
+    <% end %>
+  </div>
+</div>
