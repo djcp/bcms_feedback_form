@@ -17,5 +17,5 @@ SPEC = Gem::Specification.new do |spec|
   spec.files += Dir["public/bcms/feedback_form/**/*"]
   spec.files += Dir["vendor/plugins/recaptcha/**/*"]
   spec.has_rdoc = true
-  spec.extra_rdoc_files = ["README"]
+  spec.extra_rdoc_files = ["README.markdown"]
 end
