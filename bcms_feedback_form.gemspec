@@ -1,7 +1,7 @@
 SPEC = Gem::Specification.new do |spec| 
   spec.name = "bcms_feedback_form"
   spec.rubyforge_project = spec.name
-  spec.version = "1.0.0"
+  spec.version = "1.0.1"
   spec.summary = "A Feedback Form Module for BrowserCMS"
   spec.author = "Daniel Collis-Puro" 
   spec.email = "djcp+github@cyber.law.harvard.edu" 
@@ -15,6 +15,7 @@ SPEC = Gem::Specification.new do |spec|
   spec.files += Dir["rails/init.rb"]
   spec.files += Dir["config/initializers/recaptcha.rb"]
   spec.files += Dir["public/bcms/feedback_form/**/*"]
+  spec.files += Dir["vendor/plugins/recaptcha/**/*"]
   spec.has_rdoc = true
   spec.extra_rdoc_files = ["README"]
 end
