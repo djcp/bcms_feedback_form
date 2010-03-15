@@ -5,8 +5,9 @@ Provides a feedback form content block protected by Recaptcha. It also:
 * Allows you to specific the thank you message,
 * Gives you the ability to create a custom form,
 * Requires that you register at recaptcha.net and create an API key,
-* Uses prototype to dynamically swap out the form in-place with a thank you message, allowing this to work fine in a statically cached environment.
-* Includes the recaptcha plugin for you.
+* Uses prototype to dynamically swap out the form in-place with a thank you message, allowing this to work fine in a statically cached environment,
+* Includes the recaptcha plugin,
+* Gives you a CSV download for form submissions (as of 1.0.2).
 
 ## Installation
 
