@@ -1,6 +1,6 @@
 <div class="feedback-form">
   <% if @mode == 'edit' %>
-    <div class="download-submissions"><%= @content_block.feedback_submissions.length %> submitted. <%= link_to('download as CSV', :controller => '/cms/feedback_forms', :action => :download, :id => @content_block ) %></div> 
+    <div class="download-submissions"><strong><%= @content_block.feedback_submissions.length %> submitted.</strong> <%= link_to('download as CSV', :controller => '/cms/feedback_forms', :action => :download, :id => @content_block ) %></div> 
   <% end %>
   <%= @content_block.description %>
   <div id="feedback-form-<%= @content_block.id %>">
