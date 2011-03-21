@@ -11,7 +11,9 @@ class Cms::FeedbackFormsController < Cms::ContentBlockController
 
     # Iterate through to find all the possible columns, just in case multiple versions of a form have been submitted.
     objects.each do |obj|
+      next if obj.feedback_content.blank?
       row = YAML.load(obj.feedback_content)
+      next if row.blank?
       rows << row
       row['user_agent'] = obj.user_agent
       row['ip_address'] = obj.ip_address
